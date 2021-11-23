@@ -20,6 +20,25 @@
 
 <body>
   <h1>最大公約数</h1>
+
+  <script>
+    function gcd(a, b) {
+      let small, ax, bx;
+      if(a >= b) {
+        small = b;
+      } else {
+        small = a;
+      }
+      for(let i = small; i > 0; i--) {
+        ax = a % i;
+        bx = b % i;
+        if(ax === 0 && bx === 0) {
+          return i;
+        }
+      }
+    }
+    document.write(gcd(24, 32));
+  </script>
 </body>
 
 </html>
