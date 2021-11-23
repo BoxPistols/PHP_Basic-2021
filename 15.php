@@ -22,14 +22,24 @@
 	<h3>File Upload</h3>
 
     <?php
-$success = file_put_contents('data/news.txt',
-    'ホ一ムページをリニューアルしました');
 
-if ($success != false) {
-    echo 'ファイルのアップロードに成功しました';
-} else {
-    echo 'ファイルのアップロードに失敗しました';
-}
+$news = file_get_contents('data/news.txt');
+echo $news;
+
+// readfile('data/news.txt');
+
+$news = $news . "<br>追加のニュース";
+$success = file_put_contents('data/news.txt', $news);
+
+// $success = file_put_contents('data/news.txt',
+//     'ホ一ムページをリニューアルしました');
+
+// if ($success != false) {
+//     echo 'ファイルのアップロードに成功しました';
+// } else {
+//     echo 'ファイルのアップロードに失敗しました';
+// }
+
 ?>
 
 
