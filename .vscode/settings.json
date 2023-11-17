@@ -1,7 +1,14 @@
 {
   "workbench.colorCustomizations": {
-    "activityBar.background": "#2A3103",
-    "titleBar.activeBackground": "#3B4405",
+    "activityBar.background": "#b915a0",
+    "titleBar.activeBackground": "#b81cb8",
     "titleBar.activeForeground": "#F8FDDD"
+  },
+  "liveServer.settings.multiRootWorkspaceName": "PHP_Basic-2021",
+  "liveServer.settings.useWebExt": true,
+  "liveServer.settings.proxy": {
+    "enable": true, //   i. enabled
+    "baseUri": "/", //  ii. workspace
+    "proxyUri": "http://localhost:3000/" // iii. actual address
   }
 }

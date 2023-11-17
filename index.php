@@ -1,4 +1,8 @@
 <?php
+include 'header.php';
+?>
+
+<?php
 /*
 ### 変数
 $age = 18;
@@ -55,6 +59,8 @@ foreach ($arr as $v => $k) {
 */
 
 ### key value
+
+/*
 $array = [
     ["table", 1000],
     ["chair", 500],
@@ -79,3 +85,40 @@ foreach ($array as $v => $k) {
     echo $v . " - " . $k[0] . ": " . $k[1] . "円です";
     echo "\n<br/>";
 }
+*/
+
+### 連想配列
+$assoc = [
+    "table" => 1000,
+    "chair" => 500,
+    "bed" => [
+        "single" => 10000,
+        "double" => 20000,
+    ],
+
+];
+
+// var_dump($assoc["bed"]["single"]);
+// $assoc["bed"]["single"] += 12840;
+// var_dump($assoc["bed"]["single"]);
+
+// array_pop($assoc);
+
+unset($assoc["table"]);
+
+foreach ($assoc as $k => $v) {
+    if (is_array($v)) {
+        foreach ($v as $k2 => $v2) {
+            echo $k . " - " . $k2 . ": " . $v2 . "円です";
+            echo "\n<br/>";
+        }
+    } else {
+        echo $k . ": " . $v . "円です";
+        echo "\n<br/>";
+    }
+}
+
+?>
+</body>
+
+</html>

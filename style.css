@@ -1,9 +1,12 @@
 body {
   margin: 0;
-  padding: 1vh 4vw;
-  font-weight: normal;
-  font-family: sans-serif;
-  color: #456;
+  /* Dark Mode */
+  padding: 12px 24px;
+  background-color: #333;
+  color: #fff;
+  font-family: 'Helvetica', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.05rem;
 }
 
 hr {
