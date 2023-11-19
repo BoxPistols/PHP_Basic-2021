@@ -7,8 +7,10 @@
   "liveServer.settings.multiRootWorkspaceName": "PHP_Basic-2021",
   "liveServer.settings.useWebExt": true,
   "liveServer.settings.proxy": {
-    "enable": true, //   i. enabled
-    "baseUri": "/", //  ii. workspace
-    "proxyUri": "http://localhost:3000/" // iii. actual address
-  }
+    "enable": true,
+    "baseUri": "/",
+    "proxyUri": "http://localhost:8000/"
+  },
+  "audioCues.chatRequestSent": "auto",
+  "chat.editor.wordWrap": "on"
 }

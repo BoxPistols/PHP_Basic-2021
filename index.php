@@ -1,124 +1,91 @@
 <?php
+
+declare(strict_types=1);
+
 include 'header.php';
-?>
+// echo "\n";
+// $x = array(1, 2, 3);
+// var_dump($x);
+echo "\n<br>";
+echo "\n";
 
-<?php
+// ----- Lesson -----
+// $scores = array(30, 40, 50);
 /*
-### 変数
-$age = 18;
-if ($age >= 18) {
-    echo "成人です";
-} else {
-    echo "未成年です";
-}
-
-echo "<br> \n";
-$i = "1";
-var_dump($i === 1);
-*/
-
-/* 
-### isset empty is_null
-
-$a = "1";
-var_dump(isset($a));
-echo "<br> \n";
-// falsyな値は全てfalseと評価される
-// if (isset($a)) {
-if (!isset($a)) {
-    echo "true";
-} else {
-    echo "false";
-}
-*/
-
-// $i = 0;
-// var_dump(empty($i));
-
-### 配列
-/*
-$arr = ["a", "b", "c"];
-// print_r($arr);
-// var_dump($arr[1]);
-$arr[1] = "Hi";
-// add new element
-$arr[] = "d";
-
-// var_dump($arr);
-// echo "<br> \n";
-// echo $arr[1];
-
-// for ($i = 0; $i < count($arr); $i++) {
-//     echo $arr[$i];
-//     echo "\n";
-// }
-foreach ($arr as $v => $k) {
-    echo $k . "-" . $v;
-    echo "\n<br/>";
-}
-*/
-
-### key value
-
-/*
-$array = [
-    ["table", 1000],
-    ["chair", 500],
-    ["bed", 10000],
+$scores = [30, 40, "50"];
+$scores3 = [
+    "car" => 100,
+    "train" => 200,
+    "airplane" => 300,
 ];
+echo $scores3["car"] . PHP_EOL;
+echo "\n<br>";
 
-// var_dump($array[0][0]);
-// echo "<br> \n";
-// var_dump($array[0][1]);
-
-// $array[] = ["book", 100];
-// $array[1][1] = 2800;
-
-// shift これは最初の要素を削除する
-// array_shift($array);
-// pop これは最後の要素を削除する
-// array_pop($array);
-// splice これは指定した要素を削除する
-array_splice($array, 1, 1);
-
-foreach ($array as $v => $k) {
-    echo $v . " - " . $k[0] . ": " . $k[1] . "円です";
-    echo "\n<br/>";
+$scores2 = [
+    "first" => 90,
+    "second" => 40,
+    "third" => 100,
+    ...$scores,
+    ...$scores3
+];
+foreach ($scores2 as $key => $score) {
+    echo "$key: $score" . PHP_EOL . "\n<br>";
 }
+echo "\n<br>";
+*/
+// ----- // Lesson -----
+
+
+// ----- Lesson -----
+// declareは型の厳密さを指定する
+// 型として、$scoreにint型を指定し、返り値にstring型を指定
+/*
+function getAward(int $score): ?string
+{
+    return $score >= 100 ? 'Gold Medal' : null;
+}
+echo getAward(150) . PHP_EOL;
+echo getAward(40) . PHP_EOL;
+
+/*
+function sum(string $a, int $b)
+{
+    return ($a + $b) < 10 ? null : "10より大きい";
+}
+echo "sum" . ": " . sum(2, "4");
 */
 
-### 連想配列
-$assoc = [
-    "table" => 1000,
-    "chair" => 500,
-    "bed" => [
-        "single" => 10000,
-        "double" => 20000,
-    ],
+// ----- // Lesson -----
 
-];
 
-// var_dump($assoc["bed"]["single"]);
-// $assoc["bed"]["single"] += 12840;
-// var_dump($assoc["bed"]["single"]);
-
-// array_pop($assoc);
-
-unset($assoc["table"]);
-
-foreach ($assoc as $k => $v) {
-    if (is_array($v)) {
-        foreach ($v as $k2 => $v2) {
-            echo $k . " - " . $k2 . ": " . $v2 . "円です";
-            echo "\n<br/>";
-        }
-    } else {
-        echo $k . ": " . $v . "円です";
-        echo "\n<br/>";
-    }
+// ----- Lesson -----
+/*
+function sum($a, $b)
+{
+    // global $rate;
+    $rate = 1.1;
+    return ($a + $b) * $rate;
 }
 
-?>
-</body>
+echo "rate" . ": " . sum(2, 8);
+*/
 
-</html>
+// ----- // Lesson -----
+
+echo "\n<br>";
+echo "\n";
+// ----- Lesson -----
+/*
+$n = mt_rand(1, 3);
+if ($n === 1) {
+    $message = '<script>alert(1);</script>UI/UXデザイナー見習いです';
+} elseif ($n === 2) {
+    $message = 'プログラミング勉強中です';
+} else {
+    $message = 'PHPちょっとわかります';
+}
+
+<!-- View -->
+<!-- <p><?= $message; ?></p> -->
+<p><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></p>
+*/
